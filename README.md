@@ -1,21 +1,22 @@
 # Flight-Ticket-Price-Prediction
 
-### 📌 Project Overview
+### Project Overview
 
 This project builds a Machine Learning model to predict flight ticket prices based on different flight-related factors such as airline, source, destination, duration, travel class, number of stops, and timing details.
 
 The system helps customers identify better booking prices and supports airlines and travel platforms in implementing intelligent pricing strategies.
 
-### 🎯 Business Objective
+### Business Objective
 * Predict flight ticket prices accurately
 * Help customers choose the best booking time
 * Support airline dynamic pricing strategies
 * Improve customer booking experience
 * Enable data-driven pricing decisions
 
-### 📊 Dataset Information
+### Dataset Information
 * Total Records: 300,261
 * Features: 14 (after preprocessing)
+
 #### Key Features:
 * Flight Features: Airline, Flight Code, Travel Class
 * Route Features: Source, Destination, Number of Stops
@@ -64,16 +65,15 @@ The system helps customers identify better booking prices and supports airlines 
 * Gradient Boosting
 * XGBoost
 
-### 🏆 Final Model: XGBoost (Tuned)
-#### 🔍 Performance:
+### Final Model: XGBoost (Tuned)
+#### Performance:
 * Train R²: 0.981
 * Test R²: 0.978
 * Test RMSE: 3119
 
-### 🔁 Cross Validation
+### Cross Validation
 * Used K-Fold (k=5)
 * Achieved stable and consistent performance
-📦 Model Deployment
 
 ### Hyperparameter Tuning
 * Method Used: GridSearchCV
@@ -82,31 +82,30 @@ The system helps customers identify better booking prices and supports airlines 
    * Max Depth = 7
    * Number of Estimators = 300
 
-### 🖥️ Streamlit App Features:
+## Model Deployment
+### Streamlit App Features:
 ### User-friendly UI
 * Input fields for:
-      Rider details
-      Location info
-      Order details
+      Airline
+      Source
+      Destination
+      Stops
+      Class
+      Duration
+      Timing Details
 * Outputs:
-      ⏱️ Predicted Delivery Time (minutes)
+      Predicted Flight Ticket Price
 
-### 🌐 Deployment (Hugging Face Spaces)
-1) Create a new Space (Streamlit)
-2) Upload:
-   * app.py
-   * model.pkl
-   * requirements.txt
-3) App will auto-deploy
-
-### 📈 Key Insights
-* 🚗 Distance and traffic are the most influential features
-* ⏰ Peak hours significantly increase delivery time
-* 🌧️ Weather impacts ETA variability
-* 📦 Multiple deliveries increase delay
+### Key Insights
+* Travel class is the most influential feature
+* Flight duration strongly impacts ticket prices
+* Airlines and routes significantly affect pricing
+* Weekend and seasonal demand increase ticket prices
+* Direct flights are generally more expensive
 
 ### 🚀 Future Improvements
-* Add real-time traffic API integration
-* Use deep learning models (LSTM, ANN)
-* Add uncertainty prediction (confidence intervals)
-* Implement real-time ETA updates
+* Integrate real-time flight APIs
+* Add deep learning models (ANN, TabNet)
+* Implement real-time fare monitoring
+* Add fare trend forecasting
+* Deploy cloud-based real-time prediction system
